@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="Songrecommender.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Year / Song Recommender</title>
+</head>
+
+<body>
+    <header>
+        <br>
+        <h1 style="color: gray">Please choose your preferred
+            <span class="text" style="color: #20b2aa">year</span>
+        </h1>
+        <br>
+        <br>
+        <div class="accordion accordion-flush" id="accordionFlushExample" style="width:auto; margin: 50px 400px; height:200px; max-width: 100%; max-height: 100%">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne"
+                        style="background-color:#20b2aa; color: white;" onclick="playRandomMusic('1960s', 5)">
+                        1960s
+                    </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <audio controls id="1960sAudio">
+                            <!-- Initially, no source is set -->
+                        </audio>
+                        The 1960s saw the evolution of rock and the beginnings of the album era.
+                        At the beginning of the 1960s, pop and rock and roll trends of the 1950s continued;
+                        nevertheless, the rock and roll of the decade before started to merge into a more international,
+                        electric variant.
+                        <br>
+                        <br>
+                        <!-- Button to select and play music -->
+                        <button type="button" class="btn btn-primary btn-sm"
+                            onclick="playRandomMusic('1960s', 5)">Select</button>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree"
+                        style="background-color:#20b2aa; color: white;" onclick="playRandomMusic('1980s', 5)">
+                        1980s
+                    </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <audio controls id="1980sAudio">
+                            <!-- Initially, no source is set -->
+                        </audio>
+                        The 1980s saw the emergence of electronic dance music and new wave, also known as Modern Rock.
+                        As disco fell out of fashion in the decade's early years, genres such as post-disco, Italo
+                        disco, Euro disco, and dance-pop became more popular.
+                        <br>
+                        <br>
+                        <!-- Button to select and play music -->
+                        <button type="button" class="btn btn-primary btn-sm"
+                            onclick="playRandomMusic('1980s', 5)">Select</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function playRandomMusic(year, numFiles) {
+                // Generate a random index to select a random music file
+                const randomIndex = Math.floor(Math.random() * numFiles) + 1;
+
+                // Set the source of the audio element based on the selected year and random index
+                const audioElement = document.getElementById(`${year}Audio`);
+                audioElement.src = `${year}_song_${randomIndex}.mp3`;
+
+                // Load and play the audio
+                audioElement.load();
+                audioElement.play();
+            }
+        </script>
+
+    </header>
+</body>
+
+</html>
