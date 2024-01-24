@@ -4,18 +4,17 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="Songrecommender.css">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <meta charset="UTF-8">
     <title>Genre / Song Recommender</title>
 </head>
 
-<body>
+<body style="background-color: black;">
     <header>
+        <br>
         <br>
         <h1 style="color: gray">
             Please choose your preferred
@@ -24,8 +23,8 @@
         </h1>
         <br>
         <br>
-        <div class="accordion accordion-flush" id="accordionFlushExample" style="width:auto;  margin: 50px 400px; height:200px;max-width: 100%; max-height: 100% ">
-            <div class="accordion-item">
+        <div class="accordion accordion-flush" id="accordionFlushExample" style="width:750px;  margin: 50px 135px; height:200px;max-width: 100%; max-height: 100%">
+            <div class="accordion-item" >
                 <h2 class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne"
@@ -33,16 +32,15 @@
                         Popular (POP)
                     </button>
                 </h2>
-                <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample" >
                     <div class="accordion-body">
                         <audio controls id="popAudio">
-                            <!-- Initially, no source is set -->
                         </audio>
+                        <br>
                         Pop music is the genre of popular music that produces the most hits.
                         They have a good rhythm, a catchy melody, and are easy to remember and sing along to.
                         <br>
                         <br>
-                        <!-- Button for selecting a random music file -->
                         <button type="button" class="btn btn-primary btn-sm"
                             onclick="playRandomMusic('pop', 5)">Select</button>
                     </div>
@@ -61,6 +59,7 @@
                         <audio controls id="rockAudio">
                             <!-- Initially, no source is set -->
                         </audio>
+                        <br>
                         A form of popular music that evolved from rock and roll and pop music during the mid and late
                         1960s. Harsher and often self-consciously more serious than its predecessors.
                         <br>
@@ -85,6 +84,7 @@
                         <audio controls id="jazzAudio">
                             <!-- Initially, no source is set -->
                         </audio>
+                        <br>
                         Jazz is a kind of music in which improvisation is typically an important part. In most jazz
                         performances, players play solos which they make up on the spot, which requires considerable
                         skill.
@@ -112,6 +112,50 @@
                 audioElement.play();
             }
         </script>
+        <!-- Additional scripts for Bootstrap, jQuery, and Vanta.js -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="three.r134.min.js"></script>
+  <script src="vanta.net.min.js"></script>
+
+  <!-- Initialize Vanta.NET after the DOM has fully loaded -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Get the window dimensions
+      var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+      var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+      // Set the minimum height and width
+      var minHeight = 700.00;
+      var minWidth = 500.00;
+
+      // Adjust minHeight and minWidth based on the device type
+      if (windowWidth < minWidth) {
+        minWidth = windowWidth;
+      }
+      if (windowHeight < minHeight) {
+        minHeight = windowHeight;
+      }
+
+      VANTA.NET({
+        el: "body",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: minHeight,
+        minWidth: minWidth,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        color: 0x20b2aa,
+        backgroundColor: 0x0,
+        points: 20.00,
+        maxDistance: 14.00,
+        spacing: 10.00
+      });
+    });
+  </script>
+
 
     </header>
 </body>
