@@ -17,6 +17,7 @@
 <body>
     <header>
         <br>
+        <br>
         <h1 style="color: gray">Please choose your preferred
             <span class="text" style="color: #20b2aa">year</span>
         </h1>
@@ -37,6 +38,7 @@
                         <audio controls id="1960sAudio">
                             <!-- Initially, no source is set -->
                         </audio>
+                        <br>
                         The 1960s saw the evolution of rock and the beginnings of the album era.
                         At the beginning of the 1960s, pop and rock and roll trends of the 1950s continued;
                         nevertheless, the rock and roll of the decade before started to merge into a more international,
@@ -53,7 +55,7 @@
                 <h2 class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree"
-                        style="background-color:#20b2aa; color: white;" onclick="playRandomMusic('1980s', 5)">
+                        style="background-color:#136662 ; color: white;" onclick="playRandomMusic('1980s', 5)">
                         1980s
                     </button>
                 </h2>
@@ -63,6 +65,7 @@
                         <audio controls id="1980sAudio">
                             <!-- Initially, no source is set -->
                         </audio>
+                        <br>
                         The 1980s saw the emergence of electronic dance music and new wave, also known as Modern Rock.
                         As disco fell out of fashion in the decade's early years, genres such as post-disco, Italo
                         disco, Euro disco, and dance-pop became more popular.
@@ -90,7 +93,45 @@
                 audioElement.play();
             }
         </script>
-
+     <script src="three.r134.min.js"></script>
+     <script src="vanta.net.min.js"></script>
+   
+     <!-- Initialize Vanta.NET after the DOM has fully loaded -->
+     <script>
+       document.addEventListener('DOMContentLoaded', function () {
+         // Get the window dimensions
+         var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+         var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+   
+         // Set the minimum height and width
+         var minHeight = 700.00;
+         var minWidth = 500.00;
+   
+         // Adjust minHeight and minWidth based on the device type
+         if (windowWidth < minWidth) {
+           minWidth = windowWidth;
+         }
+         if (windowHeight < minHeight) {
+           minHeight = windowHeight;
+         }
+   
+         VANTA.NET({
+           el: "body",
+           mouseControls: true,
+           touchControls: true,
+           gyroControls: false,
+           minHeight: minHeight,
+           minWidth: minWidth,
+           scale: 1.00,
+           scaleMobile: 1.00,
+           color: 0x20b2aa,
+           backgroundColor: 0x0,
+           points: 20.00,
+           maxDistance: 14.00,
+           spacing: 10.00
+         });
+       });
+     </script>
     </header>
 </body>
 

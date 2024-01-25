@@ -57,16 +57,14 @@
                 <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
                         <audio controls id="rockAudio">
-                            <!-- Initially, no source is set -->
                         </audio>
                         <br>
                         A form of popular music that evolved from rock and roll and pop music during the mid and late
                         1960s. Harsher and often self-consciously more serious than its predecessors.
                         <br>
                         <br>
-                        <!-- Button for selecting a random music file -->
                         <button type="button" class="btn btn-primary btn-sm"
-                            onclick="playRandomMusic('rock', 1)">Select</button>
+                            onclick="playRandomMusic('rock', 5)">Select</button>
                     </div>
                 </div>
             </div>
@@ -82,7 +80,6 @@
                     data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
                         <audio controls id="jazzAudio">
-                            <!-- Initially, no source is set -->
                         </audio>
                         <br>
                         Jazz is a kind of music in which improvisation is typically an important part. In most jazz
@@ -90,7 +87,6 @@
                         skill.
                         <br>
                         <br>
-                        <!-- Button for selecting a random music file -->
                         <button type="button" class="btn btn-primary btn-sm"
                             onclick="playRandomMusic('jazz', 5)">Select</button>
                     </div>
@@ -100,10 +96,8 @@
 
         <script>
             function playRandomMusic(genre, numFiles) {
-                // Generate a random index to select a random music file
                 const randomIndex = Math.floor(Math.random() * numFiles) + 1;
 
-                // Set the source of the audio element based on the selected genre and random index
                 const audioElement = document.getElementById(`${genre}Audio`);
                 audioElement.src = `${genre}_song_${randomIndex}.mp3`;
 
@@ -112,10 +106,7 @@
                 audioElement.play();
             }
         </script>
-        <!-- Additional scripts for Bootstrap, jQuery, and Vanta.js -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+       
   <script src="three.r134.min.js"></script>
   <script src="vanta.net.min.js"></script>
 
