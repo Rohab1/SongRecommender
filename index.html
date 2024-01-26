@@ -10,32 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Song Recommender</title>
 
-    <script>
-        function validateEmail(email) {
-            const emailRegexpression = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return emailRegexpression.test(email);
-        }
-
-        function validatePassword(password) {
-            return password.length >= 8 && password.length <= 20;
-        }
-
-        function handleSubmit() {
-            const email = document.getElementById("exampleFormControlInput1").value;
-            const password = document.getElementById("inputPassword6").value;
-
-            const isEmailValid = validateEmail(email);
-            const isPasswordValid = validatePassword(password);
-
-            if (isEmailValid && isPasswordValid) {
-                localStorage.setItem("email", email);
-                localStorage.setItem("password", password);
-                window.location.href = "Formative Song Recommender.html";
-            } else {
-                alert("Please enter a valid email and password (8-20 characters).");
-            }
-        }
-    </script>
+    
 </head>
 <body>
     <br>
@@ -73,6 +48,7 @@
             <button type="button" class="btn btn-light" onclick="handleSubmit()">Submit</button>
         </form>
     </div>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

@@ -1,13 +1,7 @@
-
-    
 module.exports = {
-    "extends": [
-      "eslint:standard",
-    },
-    "rules": {
-    “semi”: [2, “always”],
-    
-    “indent”: “off”
-    }
-  };
-  
+  extends: 'standard',
+  rules: {
+    semi: [2, 'always'],
+    indent: 'off',
+  },
+};
