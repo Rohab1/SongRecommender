@@ -1,0 +1,5 @@
+{
+  "pop": ["Pop Song 1", "Pop Song 2", "Pop Song 3"],
+  "rock": ["Rock Song 1", "Rock Song 2", "Rock Song 3" ],
+  "jazz": ["Jazz Song 1", "Jazz Song 2", "Jazz Song 3"]
+}

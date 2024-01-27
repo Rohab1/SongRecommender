@@ -79,23 +79,9 @@
             </div>
         </div>
 
-        <script>
-            function playRandomMusic(year, numFiles) {
-                // Generate a random index to select a random music file
-                const randomIndex = Math.floor(Math.random() * numFiles) + 1;
-
-                // Set the source of the audio element based on the selected year and random index
-                const audioElement = document.getElementById(`${year}Audio`);
-                audioElement.src = `${year}_song_${randomIndex}.mp3`;
-
-                // Load and play the audio
-                audioElement.load();
-                audioElement.play();
-            }
-        </script>
      <script src="three.r134.min.js"></script>
      <script src="vanta.net.min.js"></script>
-     <script src="playSong.js"></script>
+     <script src="playMusicYear.js"></script>
      <script src="vantaBackground.js"></script>
    
     </header>
